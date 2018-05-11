@@ -1,5 +1,6 @@
 {
-    "name": "xhf/composer-test",
+    "name": "test/test",
+    "type": "library",
     "description": "composer",
     "license": "MIT",
     "authors": [
@@ -9,10 +10,24 @@
         }
     ],
     "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/bjeavons/zxcvbn-php.git"
+        },
+        {
+            "type":"git",
+            "url":"/data/default/composer-test/composer-test"
+        }
+    ],
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=7.0.0",
+        "predis/predis":"*",
+        "bjeavons/zxcvbn-php":"*",
+        "matyhtf/swoole_framework": "dev-master"
     },
     "autoload": {
+        "files":["lib/ClassTest.php"],
         "psr-4": {
             "Xhf\\Test\\": "src/Xhf/Test"
         }
